@@ -32,6 +32,7 @@ def time_view(request):
 
 
 def workdir_view(request):
-    list_dir = os.listdir()
-    return HttpResponse(list_dir)
+    file_list = '\n'.join(os.listdir('.'))
+    msg = f'Список файлов в рабочей директории:\n {file_list}'
+    return HttpResponse(msg)
 
