@@ -15,7 +15,9 @@ Including another URLconf
 """
 
 from django.urls import path, include
+from stations.views import bus_station
 
 urlpatterns = [
     path('', include('stations.urls')),
+    path('bus_stations/', bus_station)
 ]
