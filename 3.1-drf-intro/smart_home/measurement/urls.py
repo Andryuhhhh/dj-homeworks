@@ -1,5 +1,9 @@
+
+from django.contrib import admin
 from django.urls import path
 
+# from demo.views import DemoView, WeaponView
+
 urlpatterns = [
-    # TODO: зарегистрируйте необходимые маршруты
+    path('admin/', admin.site.urls),
 ]
