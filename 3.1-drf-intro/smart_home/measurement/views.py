@@ -1,12 +1,8 @@
-from django.shortcuts import render
-
-from rest_framework.decorators import api_view
-from rest_framework.generics import ListAPIView, RetrieveAPIView
-from rest_framework.response import Response
-from rest_framework.views import APIView
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateAPIView, CreateAPIView
 
 from .models import Sensor, Measurement
-from .serializers import MeasurementSerializer, SensorSerializer
+from .serializers import SensorSerializer, SensorDetailSerializer, MeasurementSerializer
+
 
 
 
@@ -14,3 +10,16 @@ from .serializers import MeasurementSerializer, SensorSerializer
 
 # TODO: опишите необходимые обработчики, рекомендуется использовать generics APIView классы:
 # TODO: ListCreateAPIView, RetrieveUpdateAPIView, CreateAPIView
+
+
+class SensorListCreateView(ListCreateAPIView):
+    queryset = Sensor.objects.all()
+    serializer_class = SensorSerializer
+
+class SensorRetrieveUpdateView(RetrieveUpdateAPIView):
+    queryset = Sensor.objects.all()
+    serializer_class = SensorDetailSerializer
+
+class MeasurementCreateView(CreateAPIView):
+    queryset = Measurement.objects.all()
+    serializer_class = MeasurementSerializer
