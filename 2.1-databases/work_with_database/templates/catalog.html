@@ -12,14 +12,14 @@
 
     <div class="sort-block">
       <span class="sort-item">Сортировать по:</span>
-      <a class="sort-item" href="?sort=name">названию</a>
-      <a class="sort-item" href="?sort=min_price">начиная с дешёвых</a>
-      <a class="sort-item" href="?sort=max_price">начиная с дорогих</a>
+      <a class="sort-item" href="?sort=name" style="margin: 50px">названию</a>
+      <a class="sort-item" href="?sort=min_price" style="margin: 50px">начиная с дешёвых</a>
+      <a class="sort-item" href="?sort=max_price" style="margin: 50px">начиная с дорогих</a>
     </div>
 
-    <div class="content">
+    <div class="content" style="display: flex">
       {% for phone in phones %}
-        <div class="phone">
+        <div class="phone" style="margin: 50px">
           <a href="{% url 'phone' phone.slug %}">
             <h3>{{ phone.name }}</h3>
           </a>

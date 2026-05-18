@@ -5,7 +5,7 @@ from .models import Student, Teacher
 
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin):
-    pass
+    filter_horizontal = ('teachers',)
 
 
 @admin.register(Teacher)
