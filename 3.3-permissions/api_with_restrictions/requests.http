@@ -1,5 +1,6 @@
 
-
+@TokenAdmin = 7b8bd2bfd2ab3532ed8f85e305f014b3b9cf791e
+@TokenUser = 412ea53b6b0040a3e8b7e47aca1463d245a28a87 # тут я подсмотрел что можно переменные делать в example
 # примеры API-запросов
 
 @baseUrl = http://localhost:8000/api
@@ -13,7 +14,7 @@ Content-Type: application/json
 # создание объявления
 POST {{baseUrl}}/advertisements/
 Content-Type: application/json
-Authorization: Token 902ef055a9ac93f18327f1f9c45ab059f1a62c7d
+Authorization: {{TokenAdmin}}
 
 {
   "title": "Шкаф IKEA",
@@ -25,7 +26,7 @@ Authorization: Token 902ef055a9ac93f18327f1f9c45ab059f1a62c7d
 # попытка поменять объявление
 PATCH {{baseUrl}}/advertisements/1/
 Content-Type: application/json
-Authorization: Token 902ef055a9ac93f18327f1f9c45ab059f1a62c7d
+Authorization: {{TokenAdmin}}
 
 {
   "status": "CLOSED"
